@@ -1,0 +1,183 @@
+/* styles.css */
+
+/* Estilos personalizados para la página */
+.logo {
+  max-width: 240px;
+  margin-bottom: 30px;
+}
+
+header {
+  background: #343a40;
+  color: #fff;
+  padding: 60px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.navbar .nav-link {
+  font-size: 1.1rem;
+}
+
+.nav-link .bi-cart {
+  width: 22px; /* Ancho deseado */
+  height: 22px; /* Altura deseada */
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+  position: relative;
+  top: -3px; /* Ajuste fino para alinear verticalmente */
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 280px;
+  object-fit: cover;
+}
+
+footer {
+  background: #343a40;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Carrito de compras */
+#cart-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+}
+
+.cart-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+.cart-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: #c82333;
+}
+
+/* Responsiveness */
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header h1 {
+    font-size: 2.75rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 1.25rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+.cart-item input[type="number"] {
+  width: 59px; 
+}
+
+/* Asegúrate de que la barra de navegación sea siempre visible */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Ajustes para el ícono del carrito */
+.navbar .navbar-nav .nav-item .nav-link svg {
+  font-size: 1.5rem; /* Ajusta el tamaño del ícono */
+  margin-left: 10px;
+}
+
+/* Ajustes de padding y margin para mantener la coherencia en diferentes tamaños de zoom */
+.navbar-nav .nav-item .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+/* Asegúrate de que el menú colapsado se muestre correctamente */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+  }
+}
+
+/* Ajustes adicionales para mejorar la responsividad */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+}

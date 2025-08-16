@@ -44,7 +44,7 @@ class ProductOut(BaseModel):
     price: float
     iva: float
     image_url: Optional[str]
-    category_id: Optional[int] # <-- Corrección aquí: ahora es opcional
+    category_id: Optional[int] 
     class Config:
         from_attributes = True
 
@@ -60,9 +60,8 @@ class CartItemOut(BaseModel):
     class Config:
         from_attributes = True
 
-# -------------------
-# 🚀 Pedidos
-# -------------------
+
+#  Pedidos
 
 # Item dentro de una orden
 class OrderItemBase(BaseModel):

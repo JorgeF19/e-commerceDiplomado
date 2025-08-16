@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('')
             : '<p class="text-center">No hay productos disponibles.</p>';
 
-        // Añadir al carrito
+        
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const productId = btn.dataset.productId;
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (cart[productId]) {
                     cart[productId].quantity = newQuantity;
                     saveCart(cart);
-                    // Solo actualiza el total
+                    
                     let total = 0;
                     Object.values(cart).forEach(i => total += i.price * i.quantity);
                     totalAmountElement.textContent = total.toFixed(2);

@@ -6,6 +6,10 @@ from backend.database import Base, engine
 from . import auth_service, products_service, cart_service, orders_service
 
 
+# Obtiene la ruta al directorio del proyecto y carga el archivo .env
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(project_root, '.env'))
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Tienda API")

@@ -1,5 +1,5 @@
 // URL base de tu API de FastAPI
-const API_URL = 'http://192.168.0.8:8000';
+const API_URL = 'http://192.168.1.8:8000';
 
 // Función para obtener y mostrar la información del usuario
 async function fetchAndRenderProfile() {
@@ -32,7 +32,7 @@ async function fetchAndRenderProfile() {
         
         const usernameDisplay = document.getElementById('username-display');
         if (usernameDisplay) {
-            usernameDisplay.textContent = user.username;
+            usernameDisplay.textContent = user.email; // ahora mostramos email
         }
 
         fetchAndRenderOrders(token);
@@ -42,7 +42,7 @@ async function fetchAndRenderProfile() {
     }
 }
 
-// NUEVA FUNCIÓN: Obtiene las órdenes del usuario y las muestra en la página
+// Obtiene las órdenes del usuario y las muestra en la página
 async function fetchAndRenderOrders(token) {
     try {
         const response = await fetch(`${API_URL}/orders`, {
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
     const logoutBtn = document.getElementById('logout-btn');
 
+    // LOGIN
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            // CORREGIDO: Ahora leemos el valor del campo 'email' de tu HTML
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
@@ -106,10 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(`${API_URL}/auth/login`, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        'Content-Type': 'application/json'
                     },
-                    // Usamos el valor del campo de email como username, que es lo que espera tu API
-                    body: `username=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+                    body: JSON.stringify({ email, password })
                 });
 
                 const result = await response.json();
@@ -128,10 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // REGISTRO
     if (registerForm) {
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
 
@@ -146,9 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ username, password })
+                    body: JSON.stringify({ email, password })
                 });
+
                 const result = await response.json();
+
                 if (response.ok) {
                     alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
                     window.location.href = 'login.html'; 
@@ -162,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // PERFIL
     if (window.location.pathname.endsWith('profile.html')) {
         fetchAndRenderProfile();
         if (logoutBtn) {

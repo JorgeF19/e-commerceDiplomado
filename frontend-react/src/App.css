@@ -1,0 +1,214 @@
+/* Armería Vanguard - Estilos personalizados */
+
+/* Logo */
+.logo {
+  max-width: 240px;
+  margin-bottom: 30px;
+}
+
+/* Header styles */
+header {
+  background: #343a40;
+  color: #fff;
+  padding: 60px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Navbar styles */
+.navbar .nav-link {
+  font-size: 1.1rem;
+}
+
+.nav-link .bi-cart {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+}
+
+/* Card animations */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 280px;
+  object-fit: cover;
+}
+
+/* Footer styles */
+footer {
+  background: #343a40;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Cart styles */
+#cart-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+}
+
+.cart-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+.cart-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: #c82333;
+}
+
+.cart-item input[type="number"] {
+  width: 59px;
+}
+
+/* Navbar positioning */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Cart icon adjustments */
+.navbar .navbar-nav .nav-item .nav-link svg {
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+/* Admin panel styles */
+.admin-tab-content {
+  margin-top: 20px;
+}
+
+.admin-form-card {
+  margin-bottom: 20px;
+}
+
+/* Loading spinner */
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Product grid adjustments */
+.product-grid {
+  margin-top: 20px;
+}
+
+.product-card {
+  margin-bottom: 30px;
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responsive design */
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header h1 {
+    font-size: 2.75rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 1.25rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+/* Collapsed navbar */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+  }
+}
